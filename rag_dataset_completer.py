@@ -778,11 +778,20 @@ class DocumentationGenerator:
             content += "## Bean Classes\n\n"
             for name, bean in self.beans.items():
                 content += f"### {name}\n"
-                content += f"**Source:** `{bean.get('source_file', 'unknown')}`\n\n"
+                # Handle both BeanClass objects and dicts
+                if hasattr(bean, 'source_file'):
+                    content += f"**Source:** `{bean.source_file}`\n\n"
+                    fields = bean.fields
+                else:
+                    content += f"**Source:** `{bean.get('source_file', 'unknown')}`\n\n"
+                    fields = bean.get('fields', [])
                 content += "| Field | Type | Access |\n"
                 content += "|-------|------|--------|\n"
-                for field in bean.get('fields', []):
-                    content += f"| {field['name']} | {field['type']} | {field['access']} |\n"
+                for field in fields:
+                    if hasattr(field, 'name'):
+                        content += f"| {field.name} | {field.type} | {field.access} |\n"
+                    else:
+                        content += f"| {field['name']} | {field['type']} | {field['access']} |\n"
                 content += "\n"
         
         output = DOCS_DIR / "DATA_MODEL_REFERENCE.md"
