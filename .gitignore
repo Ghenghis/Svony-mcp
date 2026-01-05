@@ -48,6 +48,11 @@ SOL_*/
 !docs/ecmascript/
 !docs/ecmascript/*.md
 !docs/ecmascript/*.svg
+!docs/GAP_ANALYSIS.md
+!docs/RAG_ACTION_PLAN.md
+!docs/SCHEMAS.md
+!docs/CROSS_REFERENCE.md
+!docs/RAG_QUERIES.md
 !evony_rag/config.py
 !evony_rag/policy.py
 !evony_rag/embeddings.py
