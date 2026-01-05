@@ -11,6 +11,16 @@
 !evony_mcp_wrapper.js
 !evony_rag/
 !evony_rag/*.py
+!docs/
+!docs/README.md
+!docs/keys/
+!docs/keys/*.md
+!docs/protocols/
+!docs/protocols/*.md
+!docs/exploits/
+!docs/exploits/*.md
+!docs/diagrams/
+!docs/diagrams/*.md
 !evony_rag/config.py
 !evony_rag/policy.py
 !evony_rag/embeddings.py
