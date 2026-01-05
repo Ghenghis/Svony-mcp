@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="tagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4488ff"/>
+      <stop offset="100%" style="stop-color:#2266cc"/>
+    </linearGradient>
+    <linearGradient id="fileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#44cc88"/>
+      <stop offset="100%" style="stop-color:#228855"/>
+    </linearGradient>
+    <linearGradient id="patchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff8844"/>
+      <stop offset="100%" style="stop-color:#cc6622"/>
+    </linearGradient>
+    <linearGradient id="testGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#cc44ff"/>
+      <stop offset="100%" style="stop-color:#9922cc"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#888"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="24" font-weight="bold">
+    ECMAScript-like Pattern Extraction Pipeline
+  </text>
+  <text x="600" y="65" text-anchor="middle" fill="#888888" font-family="Arial" font-size="12">
+    ActionScript → Tagged Code → Work Packets → Patches → Tests
+  </text>
+
+  <!-- Step 1: Source Code -->
+  <rect x="50" y="100" width="200" height="120" fill="#252540" rx="10" filter="url(#shadow)"/>
+  <text x="150" y="130" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">📁 ActionScript Source</text>
+  <text x="150" y="155" text-anchor="middle" fill="#888888" font-family="Arial" font-size="11">com/evony/*.as</text>
+  <text x="150" y="175" text-anchor="middle" fill="#888888" font-family="Arial" font-size="11">1,329 lines Context.as</text>
+  <text x="150" y="195" text-anchor="middle" fill="#888888" font-family="Arial" font-size="11">46 lines SenderImpl.as</text>
+
+  <!-- Arrow 1→2 -->
+  <path d="M250 160 L310 160" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: Tag Detection -->
+  <rect x="320" y="100" width="200" height="120" fill="url(#tagGrad)" rx="10" filter="url(#shadow)"/>
+  <text x="420" y="130" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">🏷️ Tag Detection</text>
+  <text x="420" y="155" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">DYNAMIC_CLASS</text>
+  <text x="420" y="170" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">BRACKET_ACCESS</text>
+  <text x="420" y="185" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">REFLECTION</text>
+  <text x="420" y="200" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">SOCKET_IO</text>
+
+  <!-- Arrow 2→3 -->
+  <path d="M520 160 L580 160" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: Module Boundaries -->
+  <rect x="590" y="100" width="200" height="120" fill="url(#fileGrad)" rx="10" filter="url(#shadow)"/>
+  <text x="690" y="130" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">🧩 Module Boundaries</text>
+  <text x="690" y="155" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Payload Builder</text>
+  <text x="690" y="170" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Response Parser</text>
+  <text x="690" y="185" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Command Dispatcher</text>
+  <text x="690" y="200" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Session/Auth</text>
+
+  <!-- Arrow 3→4 -->
+  <path d="M790 160 L850 160" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: Work Packets -->
+  <rect x="860" y="100" width="200" height="120" fill="url(#patchGrad)" rx="10" filter="url(#shadow)"/>
+  <text x="960" y="130" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">📦 Work Packets</text>
+  <text x="960" y="155" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">WP-001 Payload</text>
+  <text x="960" y="170" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">WP-002 Dispatcher</text>
+  <text x="960" y="185" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">WP-003 AMF</text>
+  <text x="960" y="200" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">WP-004 Context</text>
+
+  <!-- Second Row -->
+
+  <!-- Step 5: Dependency Analysis -->
+  <rect x="50" y="280" width="200" height="120" fill="#353550" rx="10" filter="url(#shadow)"/>
+  <text x="150" y="310" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">🔗 Dependencies</text>
+  <text x="150" y="335" text-anchor="middle" fill="#44cc88" font-family="Arial" font-size="10">Required:</text>
+  <text x="150" y="350" text-anchor="middle" fill="#888888" font-family="Arial" font-size="10">Sender.as, Context.as</text>
+  <text x="150" y="370" text-anchor="middle" fill="#ffcc44" font-family="Arial" font-size="10">Stubbable:</text>
+  <text x="150" y="385" text-anchor="middle" fill="#888888" font-family="Arial" font-size="10">MouseManager, Socket</text>
+
+  <!-- Step 6: Data Contracts -->
+  <rect x="320" y="280" width="200" height="120" fill="#353550" rx="10" filter="url(#shadow)"/>
+  <text x="420" y="310" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">📋 Data Contracts</text>
+  <text x="420" y="335" text-anchor="middle" fill="#4488ff" font-family="Arial" font-size="10">Input:</text>
+  <text x="420" y="350" text-anchor="middle" fill="#888888" font-family="Arial" font-size="10">cmd:String, params:Object</text>
+  <text x="420" y="370" text-anchor="middle" fill="#44cc88" font-family="Arial" font-size="10">Output:</text>
+  <text x="420" y="385" text-anchor="middle" fill="#888888" font-family="Arial" font-size="10">ByteArray (AMF)</text>
+
+  <!-- Step 7: Patch Generation -->
+  <rect x="590" y="280" width="200" height="120" fill="url(#patchGrad)" rx="10" filter="url(#shadow)"/>
+  <text x="690" y="310" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">🔧 Unified Diff</text>
+  <text x="690" y="340" text-anchor="middle" fill="#44ff44" font-family="Arial" font-size="11">+ validation</text>
+  <text x="690" y="360" text-anchor="middle" fill="#44ff44" font-family="Arial" font-size="11">+ logging</text>
+  <text x="690" y="380" text-anchor="middle" fill="#44ff44" font-family="Arial" font-size="11">+ overflow check</text>
+
+  <!-- Step 8: Tests -->
+  <rect x="860" y="280" width="200" height="120" fill="url(#testGrad)" rx="10" filter="url(#shadow)"/>
+  <text x="960" y="310" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">🧪 Regression Tests</text>
+  <text x="960" y="340" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Golden snapshots</text>
+  <text x="960" y="360" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Shape validation</text>
+  <text x="960" y="380" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Overflow detection</text>
+
+  <!-- Connecting arrows row 1 to row 2 -->
+  <path d="M150 220 L150 280" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M420 220 L420 280" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M690 220 L690 280" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M960 220 L960 280" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Third Row: Output Examples -->
+
+  <!-- Tag Examples -->
+  <rect x="50" y="450" width="350" height="150" fill="#202035" rx="8" stroke="#4488ff" stroke-width="1"/>
+  <text x="225" y="475" text-anchor="middle" fill="#4488ff" font-family="Arial" font-size="12" font-weight="bold">Tag Examples</text>
+  <text x="70" y="500" fill="#888888" font-family="Consolas" font-size="10">// BRACKET_ACCESS</text>
+  <text x="70" y="515" fill="#44cc88" font-family="Consolas" font-size="10">obj[propertyName] = value;</text>
+  <text x="70" y="540" fill="#888888" font-family="Consolas" font-size="10">// REFLECTION</text>
+  <text x="70" y="555" fill="#44cc88" font-family="Consolas" font-size="10">getDefinitionByName(className);</text>
+  <text x="70" y="580" fill="#888888" font-family="Consolas" font-size="10">// UNTYPED_VAR</text>
+  <text x="70" y="595" fill="#44cc88" font-family="Consolas" font-size="10">var data:* = response;</text>
+
+  <!-- Patch Example -->
+  <rect x="420" y="450" width="350" height="150" fill="#202035" rx="8" stroke="#ff8844" stroke-width="1"/>
+  <text x="595" y="475" text-anchor="middle" fill="#ff8844" font-family="Arial" font-size="12" font-weight="bold">Patch Example</text>
+  <text x="440" y="500" fill="#ff4444" font-family="Consolas" font-size="10">--- a/SenderImpl.as</text>
+  <text x="440" y="515" fill="#44ff44" font-family="Consolas" font-size="10">+++ b/SenderImpl.as</text>
+  <text x="440" y="535" fill="#888888" font-family="Consolas" font-size="10">@@ -22,6 +22,12 @@</text>
+  <text x="440" y="555" fill="#44ff44" font-family="Consolas" font-size="10">+ if (!validateCmd(cmd)) {</text>
+  <text x="440" y="570" fill="#44ff44" font-family="Consolas" font-size="10">+     trace("[BLOCKED]");</text>
+  <text x="440" y="585" fill="#44ff44" font-family="Consolas" font-size="10">+     return;</text>
+  <text x="440" y="600" fill="#44ff44" font-family="Consolas" font-size="10">+ }</text>
+
+  <!-- Test Example -->
+  <rect x="790" y="450" width="350" height="150" fill="#202035" rx="8" stroke="#cc44ff" stroke-width="1"/>
+  <text x="965" y="475" text-anchor="middle" fill="#cc44ff" font-family="Arial" font-size="12" font-weight="bold">Test Example</text>
+  <text x="810" y="500" fill="#cc44ff" font-family="Consolas" font-size="10">function testOverflow():void {</text>
+  <text x="810" y="520" fill="#888888" font-family="Consolas" font-size="10">  var count:int = 2147483648;</text>
+  <text x="810" y="540" fill="#888888" font-family="Consolas" font-size="10">  var ok:Boolean = validate(count);</text>
+  <text x="810" y="560" fill="#44cc88" font-family="Consolas" font-size="10">  assert(ok == false);</text>
+  <text x="810" y="580" fill="#888888" font-family="Consolas" font-size="10">  trace("PASS: overflow rejected");</text>
+  <text x="810" y="600" fill="#cc44ff" font-family="Consolas" font-size="10">}</text>
+
+  <!-- Legend -->
+  <rect x="50" y="630" width="1100" height="60" fill="#252540" rx="8"/>
+  <text x="100" y="660" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold">Pipeline:</text>
+  <text x="180" y="660" fill="#4488ff" font-family="Arial" font-size="11">1. Tag patterns</text>
+  <text x="300" y="660" fill="#ffffff" font-family="Arial" font-size="11">→</text>
+  <text x="330" y="660" fill="#44cc88" font-family="Arial" font-size="11">2. Define modules</text>
+  <text x="470" y="660" fill="#ffffff" font-family="Arial" font-size="11">→</text>
+  <text x="500" y="660" fill="#ff8844" font-family="Arial" font-size="11">3. Generate work packets</text>
+  <text x="680" y="660" fill="#ffffff" font-family="Arial" font-size="11">→</text>
+  <text x="710" y="660" fill="#ff8844" font-family="Arial" font-size="11">4. Create patches</text>
+  <text x="850" y="660" fill="#ffffff" font-family="Arial" font-size="11">→</text>
+  <text x="880" y="660" fill="#cc44ff" font-family="Arial" font-size="11">5. Write tests</text>
+  <text x="990" y="660" fill="#ffffff" font-family="Arial" font-size="11">→</text>
+  <text x="1020" y="660" fill="#44ff44" font-family="Arial" font-size="11">6. Apply &amp; verify</text>
+
+  <!-- Stats footer -->
+  <text x="600" y="720" text-anchor="middle" fill="#888888" font-family="Arial" font-size="12">
+    5 Work Packets | 11 Files | 59 Bugs Identified | 9 Fix Patterns
+  </text>
+  <text x="600" y="745" text-anchor="middle" fill="#666666" font-family="Arial" font-size="10">
+    Svony MCP - ECMAScript Extraction Pipeline
+  </text>
+</svg>

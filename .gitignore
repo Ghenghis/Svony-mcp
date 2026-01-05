@@ -39,6 +39,15 @@ SOL_*/
 !docs/MASTER_REFERENCE.md
 !docs/NETWORK_PROTOCOL.md
 !docs/RAG_CAPABILITIES.md
+!gui/
+!gui/README.md
+!gui/evony_client/
+!gui/evony_client/*.py
+!gui/autoevony/
+!gui/autoevony/*.py
+!docs/ecmascript/
+!docs/ecmascript/*.md
+!docs/ecmascript/*.svg
 !evony_rag/config.py
 !evony_rag/policy.py
 !evony_rag/embeddings.py

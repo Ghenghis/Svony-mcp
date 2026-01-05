@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="criticalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4444"/>
+      <stop offset="100%" style="stop-color:#cc0000"/>
+    </linearGradient>
+    <linearGradient id="highGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff8800"/>
+      <stop offset="100%" style="stop-color:#cc6600"/>
+    </linearGradient>
+    <linearGradient id="mediumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffcc00"/>
+      <stop offset="100%" style="stop-color:#cc9900"/>
+    </linearGradient>
+    <linearGradient id="fixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00cc44"/>
+      <stop offset="100%" style="stop-color:#009933"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="28" font-weight="bold">
+    ECMAScript/ActionScript Bug Flow Analysis
+  </text>
+  <text x="600" y="75" text-anchor="middle" fill="#888888" font-family="Arial" font-size="14">
+    Evony Client (EvonyClient1921.swf) - Bug Categories and Fix Paths
+  </text>
+
+  <!-- Legend -->
+  <rect x="20" y="100" width="180" height="130" fill="#252540" rx="8" filter="url(#shadow)"/>
+  <text x="110" y="125" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">Legend</text>
+  <rect x="35" y="140" width="20" height="15" fill="url(#criticalGrad)" rx="3"/>
+  <text x="65" y="152" fill="#ff4444" font-family="Arial" font-size="12">Critical (P0)</text>
+  <rect x="35" y="165" width="20" height="15" fill="url(#highGrad)" rx="3"/>
+  <text x="65" y="177" fill="#ff8800" font-family="Arial" font-size="12">High (P1)</text>
+  <rect x="35" y="190" width="20" height="15" fill="url(#mediumGrad)" rx="3"/>
+  <text x="65" y="202" fill="#ffcc00" font-family="Arial" font-size="12">Medium (P2)</text>
+  <rect x="35" y="215" width="20" height="15" fill="url(#fixGrad)" rx="3"/>
+  <text x="65" y="227" fill="#00cc44" font-family="Arial" font-size="12">Fix Applied</text>
+
+  <!-- Integer Overflow Section -->
+  <rect x="50" y="260" width="320" height="280" fill="#2a1a1a" rx="10" stroke="#ff4444" stroke-width="2" filter="url(#shadow)"/>
+  <text x="210" y="290" text-anchor="middle" fill="#ff4444" font-family="Arial" font-size="16" font-weight="bold">🔢 INTEGER OVERFLOW</text>
+
+  <rect x="70" y="310" width="130" height="50" fill="url(#criticalGrad)" rx="5"/>
+  <text x="135" y="340" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">Troop Count</text>
+
+  <rect x="220" y="310" width="130" height="50" fill="url(#criticalGrad)" rx="5"/>
+  <text x="285" y="340" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">Resource Calc</text>
+
+  <rect x="70" y="380" width="130" height="50" fill="url(#criticalGrad)" rx="5"/>
+  <text x="135" y="410" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">Time Arithmetic</text>
+
+  <rect x="220" y="380" width="130" height="50" fill="url(#highGrad)" rx="5"/>
+  <text x="285" y="410" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">Army Size</text>
+
+  <!-- Arrow to fix -->
+  <path d="M 210 450 L 210 480 L 210 510" stroke="#00cc44" stroke-width="2" fill="none" marker-end="url(#arrowGreen)"/>
+  <rect x="110" y="480" width="200" height="40" fill="url(#fixGrad)" rx="5"/>
+  <text x="210" y="505" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">✓ Add bounds checking</text>
+
+  <!-- Race Condition Section -->
+  <rect x="440" y="260" width="320" height="280" fill="#2a1a1a" rx="10" stroke="#ff4444" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="290" text-anchor="middle" fill="#ff4444" font-family="Arial" font-size="16" font-weight="bold">⚡ RACE CONDITIONS</text>
+
+  <rect x="460" y="310" width="130" height="50" fill="url(#criticalGrad)" rx="5"/>
+  <text x="525" y="332" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Castle Selection</text>
+  <text x="525" y="348" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="9">TOCTOU Bug</text>
+
+  <rect x="610" y="310" width="130" height="50" fill="url(#criticalGrad)" rx="5"/>
+  <text x="675" y="332" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Message Dispatch</text>
+  <text x="675" y="348" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="9">Non-atomic</text>
+
+  <rect x="460" y="380" width="130" height="50" fill="url(#highGrad)" rx="5"/>
+  <text x="525" y="410" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Event Handler</text>
+
+  <rect x="610" y="380" width="130" height="50" fill="url(#highGrad)" rx="5"/>
+  <text x="675" y="410" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">State Update</text>
+
+  <rect x="500" y="480" width="200" height="40" fill="url(#fixGrad)" rx="5"/>
+  <text x="600" y="505" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">✓ Atomic operations</text>
+
+  <!-- Null Reference Section -->
+  <rect x="830" y="260" width="320" height="280" fill="#2a2a1a" rx="10" stroke="#ffcc00" stroke-width="2" filter="url(#shadow)"/>
+  <text x="990" y="290" text-anchor="middle" fill="#ffcc00" font-family="Arial" font-size="16" font-weight="bold">⚠️ NULL REFERENCES</text>
+
+  <rect x="850" y="310" width="130" height="50" fill="url(#mediumGrad)" rx="5"/>
+  <text x="915" y="340" text-anchor="middle" fill="#000000" font-family="Arial" font-size="10">getCurCastle()</text>
+
+  <rect x="1000" y="310" width="130" height="50" fill="url(#mediumGrad)" rx="5"/>
+  <text x="1065" y="340" text-anchor="middle" fill="#000000" font-family="Arial" font-size="10">getPlayerBean()</text>
+
+  <rect x="850" y="380" width="130" height="50" fill="url(#mediumGrad)" rx="5"/>
+  <text x="915" y="410" text-anchor="middle" fill="#000000" font-family="Arial" font-size="10">fortification</text>
+
+  <rect x="1000" y="380" width="130" height="50" fill="url(#mediumGrad)" rx="5"/>
+  <text x="1065" y="410" text-anchor="middle" fill="#000000" font-family="Arial" font-size="10">buildingsArray</text>
+
+  <rect x="890" y="480" width="200" height="40" fill="url(#fixGrad)" rx="5"/>
+  <text x="990" y="505" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">✓ Null guard clauses</text>
+
+  <!-- Memory Leaks Section -->
+  <rect x="50" y="570" width="320" height="200" fill="#1a2a1a" rx="10" stroke="#ff8800" stroke-width="2" filter="url(#shadow)"/>
+  <text x="210" y="600" text-anchor="middle" fill="#ff8800" font-family="Arial" font-size="16" font-weight="bold">💾 MEMORY LEAKS</text>
+
+  <rect x="70" y="620" width="130" height="50" fill="url(#highGrad)" rx="5"/>
+  <text x="135" y="640" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Event Listeners</text>
+  <text x="135" y="655" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="9">Never removed</text>
+
+  <rect x="220" y="620" width="130" height="50" fill="url(#highGrad)" rx="5"/>
+  <text x="285" y="640" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Infinite Timer</text>
+  <text x="285" y="655" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="9">Never stopped</text>
+
+  <rect x="110" y="700" width="200" height="40" fill="url(#fixGrad)" rx="5"/>
+  <text x="210" y="725" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">✓ Dispose pattern</text>
+
+  <!-- Input Validation Section -->
+  <rect x="440" y="570" width="320" height="200" fill="#2a2a1a" rx="10" stroke="#ffcc00" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="600" text-anchor="middle" fill="#ffcc00" font-family="Arial" font-size="16" font-weight="bold">🛡️ MISSING VALIDATION</text>
+
+  <rect x="460" y="620" width="130" height="50" fill="url(#mediumGrad)" rx="5"/>
+  <text x="525" y="645" text-anchor="middle" fill="#000000" font-family="Arial" font-size="10">Command String</text>
+
+  <rect x="610" y="620" width="130" height="50" fill="url(#mediumGrad)" rx="5"/>
+  <text x="675" y="645" text-anchor="middle" fill="#000000" font-family="Arial" font-size="10">Castle ID</text>
+
+  <rect x="500" y="700" width="200" height="40" fill="url(#fixGrad)" rx="5"/>
+  <text x="600" y="725" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">✓ Input sanitization</text>
+
+  <!-- Error Handling Section -->
+  <rect x="830" y="570" width="320" height="200" fill="#2a2a1a" rx="10" stroke="#ffcc00" stroke-width="2" filter="url(#shadow)"/>
+  <text x="990" y="600" text-anchor="middle" fill="#ffcc00" font-family="Arial" font-size="16" font-weight="bold">🚨 ERROR HANDLING</text>
+
+  <rect x="850" y="620" width="130" height="50" fill="url(#mediumGrad)" rx="5"/>
+  <text x="915" y="640" text-anchor="middle" fill="#000000" font-family="Arial" font-size="10">Silent Failures</text>
+  <text x="915" y="655" text-anchor="middle" fill="#000000" font-family="Arial" font-size="9">No feedback</text>
+
+  <rect x="1000" y="620" width="130" height="50" fill="url(#mediumGrad)" rx="5"/>
+  <text x="1065" y="640" text-anchor="middle" fill="#000000" font-family="Arial" font-size="10">Missing try/catch</text>
+  <text x="1065" y="655" text-anchor="middle" fill="#000000" font-family="Arial" font-size="9">100+ line blocks</text>
+
+  <rect x="890" y="700" width="200" height="40" fill="url(#fixGrad)" rx="5"/>
+  <text x="990" y="725" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="11">✓ Error boundaries</text>
+
+  <!-- Stats Box -->
+  <rect x="20" y="800" width="1160" height="80" fill="#252540" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="835" text-anchor="middle" fill="#ff4444" font-family="Arial" font-size="20" font-weight="bold">13</text>
+  <text x="100" y="855" text-anchor="middle" fill="#888888" font-family="Arial" font-size="12">Critical</text>
+
+  <text x="300" y="835" text-anchor="middle" fill="#ff8800" font-family="Arial" font-size="20" font-weight="bold">9</text>
+  <text x="300" y="855" text-anchor="middle" fill="#888888" font-family="Arial" font-size="12">High</text>
+
+  <text x="500" y="835" text-anchor="middle" fill="#ffcc00" font-family="Arial" font-size="20" font-weight="bold">30</text>
+  <text x="500" y="855" text-anchor="middle" fill="#888888" font-family="Arial" font-size="12">Medium</text>
+
+  <text x="700" y="835" text-anchor="middle" fill="#00cc44" font-family="Arial" font-size="20" font-weight="bold">7</text>
+  <text x="700" y="855" text-anchor="middle" fill="#888888" font-family="Arial" font-size="12">Low</text>
+
+  <text x="900" y="835" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="20" font-weight="bold">59</text>
+  <text x="900" y="855" text-anchor="middle" fill="#888888" font-family="Arial" font-size="12">Total Bugs</text>
+
+  <text x="1100" y="835" text-anchor="middle" fill="#00cc44" font-family="Arial" font-size="20" font-weight="bold">6</text>
+  <text x="1100" y="855" text-anchor="middle" fill="#888888" font-family="Arial" font-size="12">Fix Patterns</text>
+</svg>
