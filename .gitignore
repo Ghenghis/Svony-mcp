@@ -36,6 +36,7 @@ SOL_*/
 !docs/source/
 !docs/source/*.md
 !docs/HACKING_TOOLKIT.md
+!docs/MASTER_REFERENCE.md
 !evony_rag/config.py
 !evony_rag/policy.py
 !evony_rag/embeddings.py
