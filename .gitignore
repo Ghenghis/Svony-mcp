@@ -37,6 +37,8 @@ SOL_*/
 !docs/source/*.md
 !docs/HACKING_TOOLKIT.md
 !docs/MASTER_REFERENCE.md
+!docs/NETWORK_PROTOCOL.md
+!docs/RAG_CAPABILITIES.md
 !evony_rag/config.py
 !evony_rag/policy.py
 !evony_rag/embeddings.py
