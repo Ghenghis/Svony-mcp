@@ -1,8 +1,15 @@
-# Evony MCP Server - .gitignore
+# Svony MCP Server - .gitignore
 # Only include MCP server files, exclude everything else
 
 # Exclude everything by default
 *
+
+# SECURITY: Never commit user credentials
+Accounts/
+SOL_*/
+*password*
+*credential*
+*.sol
 
 # Include MCP server files
 !.gitignore
