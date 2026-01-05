@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff00;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#008800;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#darkGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="24" font-weight="bold" filter="url(#glow)">SVONY MCP ARCHITECTURE</text>
+
+  <!-- Windsurf IDE Box -->
+  <rect x="50" y="80" width="180" height="100" rx="10" fill="none" stroke="#00ff00" stroke-width="2" filter="url(#glow)"/>
+  <text x="140" y="110" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="14" font-weight="bold">WINDSURF IDE</text>
+  <text x="140" y="135" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="11">Cascade AI</text>
+  <text x="140" y="155" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="11">MCP Client</text>
+
+  <!-- Arrow 1 -->
+  <line x1="230" y1="130" x2="290" y2="130" stroke="#00ff00" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="260" y="120" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="9">JSON-RPC</text>
+
+  <!-- Node.js Wrapper Box -->
+  <rect x="300" y="80" width="180" height="100" rx="10" fill="none" stroke="#00ff00" stroke-width="2" filter="url(#glow)"/>
+  <text x="390" y="110" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="14" font-weight="bold">NODE.JS WRAPPER</text>
+  <text x="390" y="135" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="11">evony_mcp_wrapper.js</text>
+  <text x="390" y="155" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="11">stdio: ignore stderr</text>
+
+  <!-- Arrow 2 -->
+  <line x1="480" y1="130" x2="540" y2="130" stroke="#00ff00" stroke-width="2"/>
+  <text x="510" y="120" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="9">stdin/out</text>
+
+  <!-- MCP Server Box -->
+  <rect x="550" y="80" width="200" height="100" rx="10" fill="none" stroke="#00ff00" stroke-width="2" filter="url(#glow)"/>
+  <text x="650" y="110" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="14" font-weight="bold">MCP SERVER</text>
+  <text x="650" y="135" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="11">mcp_server_clean.py</text>
+  <text x="650" y="155" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="11">File-only logging</text>
+
+  <!-- Arrow down from MCP -->
+  <line x1="650" y1="180" x2="650" y2="230" stroke="#00ff00" stroke-width="2"/>
+
+  <!-- RAG Engine Box -->
+  <rect x="500" y="240" width="300" height="140" rx="10" fill="none" stroke="#00ff00" stroke-width="2" filter="url(#glow)"/>
+  <text x="650" y="270" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="14" font-weight="bold">RAG ENGINE</text>
+
+  <!-- Sub-boxes in RAG -->
+  <rect x="520" y="290" width="120" height="40" rx="5" fill="none" stroke="#00ff00" stroke-width="1"/>
+  <text x="580" y="315" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="10">BM25 Lexical</text>
+
+  <rect x="660" y="290" width="120" height="40" rx="5" fill="none" stroke="#00ff00" stroke-width="1"/>
+  <text x="720" y="315" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="10">Semantic 384d</text>
+
+  <rect x="590" y="340" width="120" height="30" rx="5" fill="none" stroke="#00ff00" stroke-width="1"/>
+  <text x="650" y="360" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="10">RRF Fusion</text>
+
+  <!-- Arrow down from RAG -->
+  <line x1="650" y1="380" x2="650" y2="420" stroke="#00ff00" stroke-width="2"/>
+
+  <!-- Knowledge Base Box -->
+  <rect x="450" y="430" width="400" height="140" rx="10" fill="none" stroke="#00ff00" stroke-width="2" filter="url(#glow)"/>
+  <text x="650" y="460" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="14" font-weight="bold">KNOWLEDGE BASE</text>
+
+  <!-- Stats boxes -->
+  <rect x="470" y="480" width="110" height="70" rx="5" fill="none" stroke="#00ff00" stroke-width="1"/>
+  <text x="525" y="505" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="10">166,043</text>
+  <text x="525" y="525" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="9">Chunks</text>
+
+  <rect x="595" y="480" width="110" height="70" rx="5" fill="none" stroke="#00ff00" stroke-width="1"/>
+  <text x="650" y="505" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="10">55,871</text>
+  <text x="650" y="525" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="9">Symbols</text>
+
+  <rect x="720" y="480" width="110" height="70" rx="5" fill="none" stroke="#00ff00" stroke-width="1"/>
+  <text x="775" y="505" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="10">301+</text>
+  <text x="775" y="525" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="9">Commands</text>
+
+  <!-- Tools section on left -->
+  <rect x="50" y="240" width="200" height="180" rx="10" fill="none" stroke="#00ff00" stroke-width="2" filter="url(#glow)"/>
+  <text x="150" y="270" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="14" font-weight="bold">MCP TOOLS</text>
+
+  <text x="70" y="305" fill="#00ff00" font-family="monospace" font-size="11">▸ evony_search</text>
+  <text x="85" y="325" fill="#00aa00" font-family="monospace" font-size="9">Hybrid search</text>
+
+  <text x="70" y="355" fill="#00ff00" font-family="monospace" font-size="11">▸ evony_stats</text>
+  <text x="85" y="375" fill="#00aa00" font-family="monospace" font-size="9">Index statistics</text>
+
+  <text x="70" y="405" fill="#00ff00" font-family="monospace" font-size="11">▸ evony_mode</text>
+  <text x="85" y="425" fill="#00aa00" font-family="monospace" font-size="9">Query mode control</text>
+
+  <!-- Modes section -->
+  <rect x="50" y="450" width="200" height="120" rx="10" fill="none" stroke="#00ff00" stroke-width="2" filter="url(#glow)"/>
+  <text x="150" y="480" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="14" font-weight="bold">QUERY MODES</text>
+
+  <text x="70" y="510" fill="#00ff00" font-family="monospace" font-size="10">◉ research</text>
+  <text x="70" y="530" fill="#00ff00" font-family="monospace" font-size="10">◉ forensics</text>
+  <text x="70" y="550" fill="#00ff00" font-family="monospace" font-size="10">◉ full_access</text>
+
+  <!-- Connection lines -->
+  <line x1="250" y1="330" x2="500" y2="310" stroke="#00ff00" stroke-width="1" stroke-dasharray="5,5"/>
+
+</svg>

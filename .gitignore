@@ -28,6 +28,11 @@ SOL_*/
 !docs/exploits/*.md
 !docs/diagrams/
 !docs/diagrams/*.md
+!docs/diagrams/*.svg
+!docs/scripts/
+!docs/scripts/*.md
+!docs/tools/
+!docs/tools/*.md
 !evony_rag/config.py
 !evony_rag/policy.py
 !evony_rag/embeddings.py
