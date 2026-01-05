@@ -58,6 +58,7 @@ SOL_*/
 !exploit_scanner/*.md
 !exploit_scanner/*.json
 !evony_rag/config.py
+!REVERSE_ENGINEERING_GAP_ANALYSIS.md
 !evony_rag/policy.py
 !evony_rag/embeddings.py
 !evony_rag/hybrid_search.py
