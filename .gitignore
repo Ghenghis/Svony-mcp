@@ -1,0 +1,73 @@
+# Evony MCP Server - .gitignore
+# Only include MCP server files, exclude everything else
+
+# Exclude everything by default
+*
+
+# Include MCP server files
+!.gitignore
+!README.md
+!requirements.txt
+!evony_mcp_wrapper.js
+!evony_rag/
+!evony_rag/*.py
+!evony_rag/config.py
+!evony_rag/policy.py
+!evony_rag/embeddings.py
+!evony_rag/hybrid_search.py
+!evony_rag/rag_v2.py
+!evony_rag/mcp_server_clean.py
+!evony_rag/__init__.py
+
+# Exclude index and logs within evony_rag
+evony_rag/index/
+evony_rag/logs/
+
+# Index files (large, rebuild locally)
+evony_rag/index/
+evony_rag/logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+test_*.txt
+
+# Misc
+*.log
+*.bak

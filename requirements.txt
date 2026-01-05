@@ -1,0 +1,11 @@
+# Svony MCP Server Dependencies
+
+# Core
+numpy>=1.24.0
+sentence-transformers>=2.2.0
+
+# RAG Components
+pyyaml>=6.0
+
+# Optional (for LLM integration)
+requests>=2.28.0
